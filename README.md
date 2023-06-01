@@ -20,3 +20,6 @@ Go to your account settings in Qualtrics and inside Qualtrics IDs copy your API 
 Run with `python import_data.py`
 By default the file generated will be processed_data.xlsx, this can be changed in the environment variables.
 Manually changed data in processed_data.xlsx will **not** be overwritten.
+
+Ignore this - RuntimeWarning: invalid value encountered in minimum
+  result = getattr(ufunc, method)(*inputs, **kwargs)
