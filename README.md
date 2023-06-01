@@ -13,6 +13,7 @@ Run `pip install -r requirements.txt`
 
 ## Environment Variables
 Go to your account settings in Qualtrics and inside Qualtrics IDs copy your API token and the Survey ID
+into a new .env file using .env.example
 
 ![image](https://github.com/WillKang01/Qualtrics/assets/122059045/94940668-8282-4261-a1ee-f995772b5c26)
 
