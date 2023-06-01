@@ -8,6 +8,7 @@ import process_data
 
 load_dotenv()
 
+# Code based: https://gist.github.com/FedericoTartarini/9496282b4b2f508c0ab2da96f4955397
 def get_qualtrics_survey(dir_save_survey, survey_id):
     # Setting user Parameters
     api_token = os.environ.get("API_TOKEN")
