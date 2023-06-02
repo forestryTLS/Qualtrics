@@ -15,6 +15,9 @@ Run `pip install -r requirements.txt`
 Go to your account settings in Qualtrics and inside Qualtrics IDs copy your API token and the Survey ID
 into a new .env file using .env.example
 
+For `OUTPUT_FILE_NAME=processed_data.xlsx`, change this to the path of where the UBC shared folder is, such as:
+`OUTPUT_FILE_NAME=<path>/UBC/Forestry TLS Team - Micro Certificate programs - StrongerBC Grant Eligibility Data/processed_data.xlsx`
+
 ![image](https://github.com/WillKang01/Qualtrics/assets/122059045/94940668-8282-4261-a1ee-f995772b5c26)
 
 ## Run program
