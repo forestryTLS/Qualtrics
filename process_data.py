@@ -16,7 +16,7 @@ def process_file(csv_path, output_file_name):
     df = pd.read_csv(csv_path)
     
     # These are the columns to keep in this new order
-    index_ordered = [0, 14, 15, 16, 17, 3, 4, 9, 86, 11, 88, 89] + list(range(18, 86))
+    index_ordered = [0, 14, 15, 16, 21, 3, 4, 9, 84, 11, 86, 87, 17, 18, 19, 20] + list(range(22, 84))
     df = df[df.columns[index_ordered]]
     # Remove the row with ImportId
     df = df.drop(1)
@@ -40,12 +40,12 @@ def process_file(csv_path, output_file_name):
         df_final.drop_duplicates(subset='ResponseID', keep='first', inplace=True)
 
         if 'Processed' not in df_final.columns:
-            df_final.insert(loc=13, column='Processed', value='')
+            df_final.insert(loc=12, column='Processed', value='')
 
     else:
         df_final = df
         
-        df_final.insert(loc=13, column='Processed', value='')
+        df_final.insert(loc=12, column='Processed', value='')
 
     df_final.to_excel(output_file_name, index=False)
     date_file_name = add_date_to_filename(output_file_name)
