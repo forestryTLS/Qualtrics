@@ -16,7 +16,7 @@ def process_file(csv_path, output_file_name):
     df = pd.read_csv(csv_path)
     
     # These are the columns to keep in this new order
-    index_ordered = [0, 14, 15, 16, 21, 3, 4, 9, 84, 11, 86, 87, 17, 18, 19, 20] + list(range(22, 84))
+    index_ordered = [0, 14, 15, 16, 21, 3, 4, 9, 90, 11, 92, 93, 17, 18, 19, 20] + list(range(22, 90))
     df = df[df.columns[index_ordered]]
     # Remove the row with ImportId
     df = df.drop(1)
