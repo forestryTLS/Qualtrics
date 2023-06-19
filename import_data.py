@@ -58,7 +58,7 @@ def get_qualtrics_survey(dir_save_survey, survey_id):
             return new_path
 
 if __name__ == "__main__":
-    path = os.path.abspath(os.getcwd()) + "/Surveys" # Surveys directory
+    path = "/mnt/c/Users/wkang01/UBC/Forestry TLS Team - Micro Certificate programs - StrongerBC Grant Eligibility Data" + "/Surveys" # Surveys directory
     new_file_path = get_qualtrics_survey(dir_save_survey = path, survey_id = os.environ.get("SURVEY_ID"))
     # Process data
     process_data.process_file(new_file_path, os.environ.get("OUTPUT_FILE_NAME"))
