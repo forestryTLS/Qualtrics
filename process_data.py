@@ -26,7 +26,8 @@ def process_file(csv_path, output_file_name):
     # Amount of grant to give them is the minimum of their current grant balance with the cost of their courses
     df.insert(loc=13, column='Grant amount to give', value=np.minimum(df['Claim balance'], df['Score-sum']))
     cols = ['Birthday#1_1', 'Birthday#2_1', 'Birthday#3_1']
-    df.insert(loc=14, column='Birthday', value=df_original[cols].apply(lambda row: '-'.join(row.values.astype(str)), axis=1))
+
+    df.insert(loc=14, column='Birthday', value=df_original[cols].apply(lambda row: '-'.join(row.dropna().values.astype(str)), axis=1))
 
     new_order = [
         'ResponseID', 'Q25', 'Full Name', 'Email', 'Gender', 'SIN', 'PEN',

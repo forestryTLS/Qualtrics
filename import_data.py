@@ -9,6 +9,8 @@ import json
 
 load_dotenv()
 
+SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
+
 # Code based: https://gist.github.com/FedericoTartarini/9496282b4b2f508c0ab2da96f4955397
 def get_qualtrics_survey(dir_save_survey, survey_id):
     # Setting user Parameters
@@ -61,7 +63,7 @@ def get_qualtrics_survey(dir_save_survey, survey_id):
             return new_path
 
 if __name__ == "__main__":
-    path = "/mnt/c/Users/wkang01/UBC/Forestry TLS Team - Micro Certificate programs - StrongerBC Grant Eligibility Data" + "/Surveys" # Surveys directory
+    path = os.path.join(SCRIPT_DIR, "Surveys") # Surveys directory
     new_file_path = get_qualtrics_survey(dir_save_survey = path, survey_id = os.environ.get("SURVEY_ID"))
     # Process data
-    process_data.process_file(new_file_path, os.environ.get("OUTPUT_FILE_NAME"))
+    process_data.process_file(new_file_path, os.path.join(SCRIPT_DIR, "Export", os.environ.get("OUTPUT_FILE_NAME")))
